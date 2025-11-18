@@ -1,10 +1,4 @@
----
-title: "FINAL PROJECT - README FILE"
-output:
-  pdf_document: default
-  html_document: default
-date: "2025-11-25"
----
+# INF1340: Bike Share Toronto Ridership Analysis
 
 Karen Eng, Ziad Harmanani, Mara Silver
 Instructor: Dr. Maher Elshankankiri 
@@ -15,11 +9,7 @@ Program: Master of Information
 Faculty of Information  
 University of Toronto  
 
-Date Created: 2025 - 11 - 15  
-Date Modified: 2025 - 11 - 25
-
-# INF1340: Bike Share Toronto Ridership Analysis
-
+Date Created: 2025 11 13
 
 ## Introduction
 
