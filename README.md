@@ -1,15 +1,16 @@
 # INF1340: Bike Share Toronto Ridership Analysis
 
 Karen Eng, Ziad Harmanani, Mara Silver
+
 Instructor: Dr. Maher Elshankankiri 
 
-Course code: INF1340   
-Course name: Programming for Data Science   
-Program: Master of Information  
-Faculty of Information  
-University of Toronto  
+Course code: INF1340
+Course name: Programming for Data Science
+Program: Master of Information
+Faculty of Information
+University of Toronto
 
-Date Created: 2025 11 13
+Date Created: 2025-11-13
 
 ## Introduction
 
