@@ -25,7 +25,7 @@ This project analyzes the Bike Share Toronto ridership dataset for 2023, focusin
 | `End Time`                 | Timestamp of trip end                            |
 | `Start Month`, `Start Day` | Extracted from start timestamp                   |
 | `Weekday/Weekend (Binary)` | 1 = weekday, 0 = weekend                         |
-| `Peak Hour (Binary)`       | 1 = 7–9am or 4–6pm                               |
+| `Peak Hour (Binary)`       | 1 = 7 - 9am or 4 - 6pm                           |
 | `Log_Trip_Duration`        | Natural log of trip duration                     |
 | `Trip_Duration_Category`   | Very Short / Short / Medium / Long / Very Long   |
 
