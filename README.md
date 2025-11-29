@@ -12,26 +12,57 @@ University of Toronto
 
 Date Created: 2025-11-13
 
-## Introduction
+# Bike Share Toronto 2023 Ridership Analysis
 
-## Project Overview
-This project analyzes the Bike Share Toronto ridership dataset for 2023, focusing on key usage patterns and predictive modeling. The goal is to understand how temporal trip characteristics relate to trip duration and peak hour usage.
+## 📌 Project Overview  
+This project analyzes the 2023 Bike Share Toronto dataset to explore ridership patterns and build predictive models for trip duration and peak-hour usage.  
 
-| Variable                   | Description                                      |
-| -------------------------- | ------------------------------------------------ |
-| `Trip Duration`            | Length of trip in seconds (converted to minutes) |
-| `Start Time`               | Timestamp of trip start                          |
-| `Start Month`, `Start Day` | Extracted from start timestamp                   |
-| `End Time`                 | Timestamp of trip end                            |
-| `Start Month`, `Start Day` | Extracted from start timestamp                   |
-| `Weekday/Weekend (Binary)` | 1 = weekday, 0 = weekend                         |
-| `Peak Hour (Binary)`       | 1 = 7 - 9am or 4 - 6pm                           |
-| `Log_Trip_Duration`        | Natural log of trip duration                     |
-| `Trip_Duration_Category`   | Very Short / Short / Medium / Long / Very Long   |
-
-
-## Dataset Description
-This project uses the Bike Share Toronto Ridership Data, available through the City of Toronto’s Open Data Portal. The data is organized by year, with each year containing 12 monthly CSV files. Each monthly file typically contains over 100,000 rows, where each row represents a single trip taken using the Tangerine Bike Share system.
-
-**Data Source:** City of Toronto. Bike Share Toronto Ridership Data.  
+## Dataset Description  
+The dataset comprises 12 monthly CSV files (Jan–Dec 2023), each containing ~100,000–500,000 records. 
 Available at: https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/
+Key raw fields include: Trip Duration, Start/End Station (ID & name), Start/End time stamps, User Type, and Trip ID.  
+Several derived variables were engineered to support analysis: start-day/month/hour, weekday/weekend flag, peak-hour categories, log-duration, and trip-duration categories (Very Short → Very Long).  
+
+## Data Cleaning & Preprocessing  
+- Merged all monthly CSVs into a single dataframe  
+- Cleaned inconsistent column names (BOM removal, whitespace)  
+- Parsed date/time, extracted new temporal variables (day, month, hour)  
+- Created binary weekday/weekend and peak-hour labels  
+- Filtered out invalid or extreme trips (e.g. duration <1 min or > 99th percentile)  
+- Converted duration to human-readable and log-scaled formats  
+
+## Models Implemented  
+- **Naive Bayes** — baseline classifier for trip-duration categories  
+- **Logistic Regression (Logit)** — peak-hour classification using temporal & duration features  
+- **Random Forest Classifier** — flexible, nonlinear model trained on engineered features  
+
+## Project Structure  
+```
+INF1340-Ridership/
+│── Bike share ridership/  
+│   └── Bike share ridership 2023-01
+│   └── ...
+│   └── Bike share ridership 2023-01
+│── rideshare_cleaning.ipynb 
+└── README.md    
+```
+
+## How to Run the Code  
+1. Install dependencies: `pip install -r requirements.txt`  
+2. Place raw monthly CSVs into `INF1340-Ridership/Bike share ridership`  
+3. Run `ridership_cleaning.ipynb`
+
+## Dependencies  
+- Python 3.x  
+- pandas, numpy, scikit-learn, statsmodels, matplotlib, seaborn  
+
+## Known Limitations & Future Work  
+- No station-level or geospatial data → cannot model route distance or traffic effects  
+- Weather data not included, which may influence trip durations  
+- Potential bias from missing station IDs/names (~10% of trips)  
+- Future: incorporate station coordinates, weather, temporal demand variation  
+
+## Authors
+Karen Eng
+Ziad Harmanani
+Mara Silver
