@@ -29,12 +29,34 @@ Several derived variables were engineered to support analysis: start-day/month/h
 - Parsed date/time, extracted new temporal variables (day, month, hour)  
 - Created binary weekday/weekend and peak-hour labels  
 - Filtered out invalid or extreme trips (e.g. duration <1 min or > 99th percentile)  
-- Converted duration to human-readable and log-scaled formats  
+- Converted duration to human-readable and log-scaled formats
 
-## Models Implemented  
-- **Naive Bayes** — baseline classifier for trip-duration categories  
-- **Logistic Regression (Logit)** — peak-hour classification using temporal & duration features  
-- **Random Forest Classifier** — flexible, nonlinear model trained on engineered features  
+## Variables
+
+| Variable Name               | Description                                        |
+|-----------------------------|----------------------------------------------------|
+| End Date                    | Extracted end date from End Time                  |
+| End Day                     | Day extracted from End Time                       |
+| End Month                   | Month extracted from End Time                     |
+| End Station Id              | ID of the ending station                          |
+| End Station Name            | Name of the ending station                        |
+| End Time                    | Timestamp of trip end (YYYY-MM-DD)                |
+| Peak Hour                   | Indicator of whether start time is in peak hours  |
+| Peak Hour (Binary)          | Binary peak-hour indicator (1 = Peak, 0 = Off Peak) |
+| Start Date                  | Extracted start date from Start Time              |
+| Start Day                   | Day extracted from Start Time                     |
+| Start Hour                  | Hour extracted from Start Time                    |
+| Start Month                 | Month extracted from Start Time                   |
+| Start Station Id            | ID of the starting station                        |
+| Start Station Name          | Name of the starting station                      |
+| Start Time                  | Timestamp of trip start (YYYY-MM-DD)              |
+| Trip Duration               | Duration of the trip (seconds)                    |
+| Trip_Duration_Category      | Categorical duration label (Very Short, Short, Medium, Long, Very Long) |
+| Log_Trip_Duration           | Log-transformed trip duration for normalization   |
+| Trip Duration (mm:ss)       | Trip duration converted to mm:ss format           |
+| User Type                   | Type of user (Casual or Annual)                   |
+| Weekday/Weekend             | Start date classified as weekday or weekend       |
+| Weekday/Weekend (Binary)    | Binary weekday indicator (1 = Weekday, 0 = Weekend) |
 
 ## Project Structure  
 ```
