@@ -14,7 +14,7 @@ Date Created: 2025-11-13
 
 # Bike Share Toronto 2023 Ridership Analysis
 
-## 📌 Project Overview  
+## Project Overview  
 This project analyzes the 2023 Bike Share Toronto dataset to explore ridership patterns and build predictive models for trip duration and peak-hour usage.  
 
 ## Dataset Description  
